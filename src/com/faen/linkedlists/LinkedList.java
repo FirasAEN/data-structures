@@ -79,7 +79,7 @@ public class LinkedList<T> implements ILinkedList<T> {
         }
         Node<T> current = head;
         Node<T> previous = null;
-        while(current.next != null) { // if current.next == null <=> current == tail
+        while (current.next != null) { // if current.next == null <=> current == tail
             previous = current;
             current = current.next;
         }
@@ -91,6 +91,22 @@ public class LinkedList<T> implements ILinkedList<T> {
 
     @Override
     public T remove(T obj) {
+        Node<T> current = head, previous = null;
+        while (current != null) {
+            if (((Comparable<T>) obj).compareTo(current.data) == 0) {
+                if (current == head) {
+                    return removeFirst();
+                }
+                if (current == tail) {
+                    return removeLast();
+                }
+                previous.next = current.next;
+                currentSize--;
+                return current.data;
+            }
+            previous = current;
+            current = current.next;
+        }
         return null;
     }
 

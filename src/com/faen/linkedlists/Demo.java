@@ -28,6 +28,22 @@ public class Demo {
         System.out.println(myList);
     }
 
+    private static void remove() {
+        LinkedList<Integer> myList = new LinkedList<>();
+        myList.addLast(1);
+        myList.addLast(2);
+        myList.addLast(3);
+        myList.addLast(4);
+        myList.addLast(5);
+        System.out.println(myList);
+        myList.remove(1);
+        System.out.println(myList);
+        myList.remove(5);
+        System.out.println(myList);
+        myList.remove(3);
+        System.out.println(myList);
+    }
+
     private static LinkedList<Integer> populate(int numberOfNodes) {
         LinkedList<Integer> myList = new LinkedList<>();
         IntStream.range(0, numberOfNodes)
@@ -42,6 +58,6 @@ public class Demo {
     }
 
     public static void main(String[] args) {
-        removeLast();
+        remove();
     }
 }
