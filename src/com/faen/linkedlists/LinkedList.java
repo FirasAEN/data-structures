@@ -29,7 +29,10 @@ public class LinkedList<T> implements ILinkedList<T> {
 
     @Override
     public void addFirst(T obj) {
-        throw new UnsupportedOperationException();
+        Node<T> newNode = new Node<>(obj);
+        newNode.next = head;
+        head = newNode;
+        currentSize++;
     }
 
     @Override
