@@ -56,7 +56,17 @@ public class LinkedList<T> implements ILinkedList<T> {
 
     @Override
     public T removeFirst() {
-        return null;
+        if (head == null) {
+            return null;
+        }
+        T temp = head.data;
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            head = head.next;
+        }
+        currentSize--;
+        return temp;
     }
 
     @Override
