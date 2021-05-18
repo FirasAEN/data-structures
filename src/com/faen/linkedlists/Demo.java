@@ -58,6 +58,15 @@ public class Demo {
     }
 
     public static void main(String[] args) {
-        remove();
+        LinkedList<Student> studentLinkedList = new LinkedList<>();
+        Student jones = new Student("Jones");
+        Student tim = new Student("Tim");
+        Student kim = new Student("Kim");
+        studentLinkedList.addLast(jones);
+        studentLinkedList.addLast(tim);
+        studentLinkedList.addLast(kim);
+        System.out.println(studentLinkedList);
+        studentLinkedList.remove(jones);
+        System.out.println(studentLinkedList);
     }
 }
